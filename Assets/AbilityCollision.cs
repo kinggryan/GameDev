@@ -22,7 +22,9 @@ public class AbilityCollision : MonoBehaviour {
 	}
 	
 	void chooseAbility(){
-		Player.GetComponent<AbilityUse> ().setAbility (Random.Range (1, 8));
+		int x = Random.Range (1, 9);
+		Debug.Log (x);
+		Player.GetComponent<AbilityUse> ().setAbility (x);
 	}
 
 	// Update is called once per frame
