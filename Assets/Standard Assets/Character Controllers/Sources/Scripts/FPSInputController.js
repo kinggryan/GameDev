@@ -8,7 +8,13 @@ function Awake () {
 // Update is called once per frame
 function Update () {
 	// Get the input vector from keyboard or analog stick
-	var directionVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+	var directionVector;
+	var AbilityUse;
+	AbilityUse = transform.GetComponent("AbilityUse");
+	if(AbilityUse.ability != 8)
+		directionVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+	else
+		directionVector = new Vector3(-1 * Input.GetAxis("Horizontal"), 0, -1 * Input.GetAxis("Vertical"));
 	
 	if (directionVector != Vector3.zero) {
 		// Get the length of the directon vector and then normalize it
